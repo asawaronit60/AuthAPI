@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    div.text-center
+        form(action="/user/login"  method="POST")
+            #error
+                if error
+                    p.text-danger Error!!!
+
+            
+            h1 Please sign in
+
+            //-input email
+            label( for="inputEmail" class="sr-only") Email address
+            input(type="email" name="email"  class="form-control" placeholder="Email address" required autofocus)
+
+            //-input password
+            label(for="inputPassword" class="sr-only") Password
+            input(type="password" name="password"  class="form-control" placeholder="Password" required)
+
+
+            //-signIn button
+            
+            button Sign in
+
+        
