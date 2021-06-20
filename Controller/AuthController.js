@@ -62,7 +62,10 @@ exports.login = async(req, res ,next)=>{
               
                  
                 if(!user || !await(user.correctPassword( password, user.password ))) {
-                    return next('Incorrect Email or password!')
+                    return res.status(401).json({
+                     status:'Failed',
+                       message:'Incorrect email or Password'
+                    })
                   }
                      
                   createSendToken(user,200,res)
