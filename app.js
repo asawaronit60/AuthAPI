@@ -36,12 +36,6 @@ require('./config/passport')(passport)
 app.use('/' , viewRoutes)
 app.use('/user',userRoutes)
 
-app.use((err,req,res)=>{
-    res.status(500).json({
-        error:err.message
-    })
-})
-
 
 app.listen(PORT,()=>{
     console.log("server is runnig at port 5000")
